@@ -14,7 +14,6 @@ export default function Home() {
     "/fotos/foto12.jpeg",
     "/fotos/foto13.jpeg",
     "/fotos/foto14.jpeg",
-    "/fotos/foto15.jpeg",
   ]
 
   return (
