@@ -1,3 +1,27 @@
+function PixelHeart() {
+  return (
+    <div className="flex justify-center my-4">
+      <div className="grid grid-cols-7 gap-[2px]">
+        {[
+          0,1,1,0,1,1,0,
+          1,1,1,1,1,1,1,
+          1,1,1,1,1,1,1,
+          0,1,1,1,1,1,0,
+          0,0,1,1,1,0,0,
+          0,0,0,1,0,0,0,
+        ].map((p, i) => (
+          <div
+            key={i}
+            className={`w-3 h-3 ${
+              p ? "bg-pink-500" : "bg-transparent"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   const fotos = [
     "/fotos/foto1.jpeg",
@@ -24,20 +48,28 @@ export default function Home() {
         <h1 className="text-2xl font-semibold mb-2">
           Para ti, Karlita hermosa ❤️
         </h1>
+
+        {/* CORAZÓN PIXEL ART */}
+        <PixelHeart />
+
         <p className="text-sm opacity-80 max-w-md mx-auto">
-          Eres todo para mi, gracias por todos estos momentos.
+          Eres todo para mí, gracias por todos estos momentos.
         </p>
       </section>
 
       {/* GALERÍA */}
-      <section className="grid grid-cols-2 gap-2">
+      <section className="grid grid-cols-2 gap-3">
         {fotos.map((foto, i) => (
-          <img
+          <div
             key={i}
-            src={foto}
-            alt={`foto-${i}`}
-            className="rounded-lg object-cover w-full h-40"
-          />
+            className="bg-black rounded-lg overflow-hidden"
+          >
+            <img
+              src={foto}
+              alt={`foto-${i}`}
+              className="w-full h-auto object-contain"
+            />
+          </div>
         ))}
       </section>
 
